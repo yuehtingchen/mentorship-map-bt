@@ -1,0 +1,23 @@
+.right{
+    right: 0;
+    background-color: #FFFBD9;
+}
+.left{
+    left: 0;
+    background-color: white;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+  
