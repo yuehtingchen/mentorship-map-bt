@@ -32,8 +32,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'user',
-    'oauth2_provider',
-    'rest_framework',
     'mentor',
     'school',
     'django.contrib.admin',
