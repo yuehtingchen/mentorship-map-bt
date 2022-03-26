@@ -12,3 +12,4 @@ class UniSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Uni
         fields = ('id','name','lat','long','city','country')
+
