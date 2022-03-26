@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Login from './components/login/Login.jsx';
+import Map from './components/map/Map.jsx';
+import Header from './components/map/Header.jsx'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Header />
+    <Map />
   </React.StrictMode>,
   document.getElementById('root')
 );

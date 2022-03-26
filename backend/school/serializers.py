@@ -1,4 +1,3 @@
-from curses.ascii import US
 from rest_framework import serializers
 
 from .models import High_school, Uni
