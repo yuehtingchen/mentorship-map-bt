@@ -20,17 +20,19 @@ export default class Login extends React.Component{
     }
 
     onGoogleLoginFailure = (response) => {
-        
+        console.log("Error: google login failed");
     }
 
     validateTokenAndObtainSession({data, idToken}) {
         const headers = {
             Authorization: idToken,
-            'Contend-Type': 'application/json'
+            'Content-Type': 'application/json'
         };
 
         // Need to change the hardcoded url
-        axios.post('http://127.0.0.1:8000//user/login', data, { headers });
+        console.log(data)
+        console.log(headers)
+        axios.post('http://127.0.0.1:8000/user/login/', data, { headers });
     }
     render() {
         return (

@@ -18,7 +18,7 @@ from django.urls import path, include
 from rest_framework import routers
 
 
-from user.views import UsersViewSet
+from user.views import UsersViewSet, UserLoginAPI
 from mentor.views import MentorsViewSet
 
 router = routers.DefaultRouter()
@@ -29,4 +29,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
     path('o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('user/login/', UserLoginAPI.as_view()),
     ]
