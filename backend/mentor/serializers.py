@@ -16,3 +16,7 @@ class MentorsSerializer(serializers.HyperlinkedModelSerializer):
         model = Mentors
         fields = ('id','first_name', 'last_name', 'major','grad_year','email', 'linkedin','high_school', 'uni','intro','preferred_mentee_grade','other_preferences',"essay_editing")
 
+class TableSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta: 
+        model = Mentors
+        fields = ('first_name', 'last_name', 'major','grad_year','email', 'linkedin')

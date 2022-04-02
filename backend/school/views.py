@@ -32,7 +32,7 @@ class UniViewSet(viewsets.ModelViewSet):
         final = {}
 
         final.update(serializer.data)
-        final.update({"mentors at this school": rel_serializer.data})
+        final.update({"mentors": rel_serializer.data})
 
         return Response(final)
 
