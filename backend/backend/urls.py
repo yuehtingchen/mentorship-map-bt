@@ -19,11 +19,14 @@ from rest_framework import routers
 
 
 from user.views import UsersViewSet
-from mentor.views import MentorsViewSet
+from mentor.views import MentorsViewSet, TableViewSet
+from school.views import UniViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UsersViewSet)
 router.register(r'mentors', MentorsViewSet)
+router.register(r'schools',UniViewSet)
+router.register(r'tables',TableViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
