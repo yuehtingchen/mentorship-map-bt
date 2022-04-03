@@ -27,7 +27,6 @@ export default class Login extends React.Component{
             'Content-Type': 'application/json'
         };
         
-        console.log(headers);
         // Need to change the hardcoded url
         axios.post('http://127.0.0.1:8000/user/login/', data, { headers })
             .then((response) => {
