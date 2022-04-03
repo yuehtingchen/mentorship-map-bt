@@ -14,9 +14,7 @@ export default class Login extends React.Component{
             last_name: response.profileObj.familyName
         };
     
-        this.validateTokenAndObtainSession({ data, idToken })
-            .then()
-            .catch();
+        this.validateTokenAndObtainSession({ data, idToken });
     }
 
     onGoogleLoginFailure = (response) => {
@@ -28,23 +26,28 @@ export default class Login extends React.Component{
             Authorization: idToken,
             'Content-Type': 'application/json'
         };
-
+        
+        console.log(headers);
         // Need to change the hardcoded url
-        console.log(data)
-        console.log(headers)
-        axios.post('http://127.0.0.1:8000/user/login/', data, { headers });
+        axios.post('http://127.0.0.1:8000/user/login/', data, { headers })
+            .then((response) => {
+                console.log(response);
+            })
+            .catch(() => {
+                console.log("login error");
+            });
     }
     render() {
         return (
             <div className='page'>
-                <div class="split left">
-                    <div class = 'center'>
+                <div className="split left">
+                    <div className = 'center'>
                         <img src = {logo}></img>
                     </div>
                 </div>
 
-                <div class="split right">
-                    <div class = "center">
+                <div className="split right">
+                    <div className = "center">
                         <h5>Welcome!</h5>
                         <GoogleLogin
                             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}  // your Google app client ID
