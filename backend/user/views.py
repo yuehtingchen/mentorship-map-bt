@@ -5,9 +5,9 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from .serializers import UsersSerializer
-from .models import Users
+from .models import User
 
 
 class UsersViewSet(viewsets.ModelViewSet):
-    queryset = Users.objects.all().order_by('id')
+    queryset = User.objects.all().order_by('id')
     serializer_class = UsersSerializer
