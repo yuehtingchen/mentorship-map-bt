@@ -3,7 +3,7 @@ from django.forms import CharField
 
 # Create your models here.
 
-class High_school(models.Model):
+class HighSchool(models.Model):
     name = models.CharField(max_length=100)
     lat = models.IntegerField(blank = True, null = True)
     long = models.IntegerField(blank = True, null = True)
