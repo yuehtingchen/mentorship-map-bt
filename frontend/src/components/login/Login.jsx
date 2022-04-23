@@ -41,7 +41,7 @@ export default class Login extends React.Component{
             <div className='page'>
                 <div className="split left">
                     <div className = 'center'>
-                        <img src = {logo}></img>
+                        <img src = {logo} id="login-img"></img>
                     </div>
                 </div>
 
