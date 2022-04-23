@@ -16,7 +16,19 @@ footer a{
     font-size: 2vh;
 }
 
-img{
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    background-color: #FFB952;
+    
+}
+
+#brand {
+    color: #FFF;
+    font-size: larger;
+}
+ 
+footer img{
     float: none;
     position: absolute;
     height: 8vh;
