@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.sticky{
+    position: fixed;
+    bottom: 0;
+}
+/* a{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-size: 2vh;
+} */
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    background-color: #FFB952;
+    
+}
+
+#brand {
+    color: #FFF;
+    font-size: larger;
+}
+ 
+footer img{
+    float: none;
+    position: fixed;
+    height: 5vh;
+    bottom: 10vh;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
