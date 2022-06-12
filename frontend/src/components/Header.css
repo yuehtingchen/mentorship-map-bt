@@ -3,30 +3,17 @@ header{
     overflow: hidden;
 }
 
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    background-color: #FFB952;
+    
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-header a{
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    float: left;
-    text-align: center;
-    padding: 1.5vh;
-    text-decoration: none;
-    font-size: 2vh;
-}
 
-.right{
-    float: right;
-}
-
-header h1{
-    color: white;
-    float: none;
-    font-family: 'Poppins';
-    font-style: normal;
-    position: absolute;
-    text-align: center;
-    left: 50%;
-    transform: translate(-50%, -37.5%);
+#brand {
+    color: #FFF;
+    font-size: larger;
 }
