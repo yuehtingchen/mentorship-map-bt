@@ -1,9 +1,8 @@
 import React from "react";
 import logo from './logo.png';
 import "./Database.css";
-import { Navbar, Nav, Container} from 'react-bootstrap';
 import Table from 'react-bootstrap/Table'
-import { Wrapper, Status } from "@googlemaps/react-wrapper";
+import Header from "../Header.jsx"
 
 export default class Database extends React.Component{
     constructor(props) {
@@ -13,19 +12,7 @@ export default class Database extends React.Component{
     render() {
         return (
             <div>
-                <Navbar className="navbar">
-                <Container>
-                    <Navbar.Brand href="#home"><span id="brand">Mentor Map</span></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="/"><span id="link">Map</span></Nav.Link>
-                        <Nav.Link href="/database"><span id="link">Database</span></Nav.Link>
-                        <Nav.Link href="#link"><span id="link">Logout</span></Nav.Link>
-                    </Nav>
-                    </Navbar.Collapse>
-                </Container>
-                </Navbar>
+                <Header/>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
