@@ -1,0 +1,15 @@
+.footer{
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+}
+
+footer img{
+    float: none;
+    position: absolute;
+    height: 8vh;
+    top: 90vh;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
