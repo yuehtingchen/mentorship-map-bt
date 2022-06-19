@@ -15,3 +15,15 @@
     font-family: 'Poppins', sans-serif;
     font-style: normal;
 }
+
+Table th {
+    color: #FF9900;
+    border-bottom: solid #FF9900;
+    height: 6vh;
+}
+
+Table td {
+    color: black;
+    font-weight: 500;
+    height: 6vh;
+}

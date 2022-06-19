@@ -16,11 +16,15 @@ footer div {
 }
 
 footer a {
-    color: black;
+    color: gray;
     font-style: normal;
     text-decoration: none;
     font-size: 2vh;
     margin: 1vw;
+}
+
+footer a:hover {
+    color: black;
 }
 
 footer img{

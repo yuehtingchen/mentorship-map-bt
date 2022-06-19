@@ -14,7 +14,7 @@ export default class Database extends React.Component{
             <div>
                 <Header/>
                 <div className="table">
-                <Table striped bordered hover>
+                <Table striped hover>
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -24,6 +24,15 @@ export default class Database extends React.Component{
                             <th>City</th>
                             <th>Country</th>
                             <th>Contact</th>
+                        </tr>
+                        <tr>
+                            <td>John Appleseed</td>
+                            <td>Bio Chemistry</td>
+                            <td>2020</td>
+                            <td>California University of Pennsylvania</td>
+                            <td>California</td>
+                            <td>United States of America</td>
+                            <td>example@example.com</td>
                         </tr>
                         <tr>
                             <td>John Appleseed</td>

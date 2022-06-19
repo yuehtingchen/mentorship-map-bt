@@ -1,4 +1,5 @@
 header{
+    width: 100%;
     background-color: #FFB952;
     overflow: hidden;
 }
@@ -13,11 +14,19 @@ header a{
     text-align: center;
     padding: 2.5vh;
     text-decoration: none;
-    font-size: 2vh;
+    font-size: 2.4vh;
+}
+
+header a:hover{
+    color: white;
 }
 
 header .right{
     float: right;
+}
+
+header .right a:hover {
+    color: #FFB952;
 }
 
 header h1{

@@ -9,8 +9,8 @@ export default class Footer extends React.Component{
         return (
             <footer className="footer">
                 <div>
-                    <a href="\">About</a>
-                    <a href="\">Instagram</a>
+                    <a href="https://www.beyondtw.org" target="_blank">About</a>
+                    <a href="https://www.instagram.com/beyondtaiwan/" target="_blank">Instagram</a>
                 </div>
                 <img src={logo}></img>
             </footer> 
