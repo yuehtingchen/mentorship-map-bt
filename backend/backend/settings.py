@@ -150,7 +150,6 @@ GOOGLE_OAUTH2_CLIENT_ID = env('GOOGLE_OAUTH2_CLIENT_ID')
 # Rest Framework
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        # 'rest_framework.permissions.IsAuthenticated',
     )
 }
