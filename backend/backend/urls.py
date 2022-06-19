@@ -17,9 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 
-from user.views import UsersViewSet
-from mentor.views import MentorsViewSet, TableViewSet, UserLoginAPI
-from school.views import UniViewSet, MentorsViewSet
+from user.views import UsersViewSet, UserLoginAPI
+from mentor.views import MentorsViewSet, TableViewSet
+from school.views import UniViewSet
 
 router = routers.DefaultRouter()
 router.register(r'users', UsersViewSet)
