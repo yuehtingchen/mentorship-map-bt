@@ -1,12 +1,12 @@
 import React from "react";
 import "./Map.css"
 import { GoogleMap, LoadScript } from '@react-google-maps/api';
-import logo from './logo.png';
 import Header from "../Header.jsx"
+import Footer from "../Footer.jsx"
 
 const containerStyle = {
     width: "100%",
-    height: "700px"
+    height: "90vh"
 };
     
 const center = {
@@ -36,11 +36,7 @@ export default class Map extends React.Component{
                         <></>
                 </GoogleMap>
                 </LoadScript>
-                <footer>
-                    <a>About</a>
-                    <a>Instagram</a>
-                    <img src = {logo}></img>
-                </footer>
+                <Footer/>
             </div>
             
         )
