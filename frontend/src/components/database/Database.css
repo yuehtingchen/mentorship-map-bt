@@ -11,4 +11,7 @@
 .table {
     padding: 20px;
     padding-top: 30px;
+    font-size: 2.3vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
 }
