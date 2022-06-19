@@ -3,13 +3,46 @@ import "./Database.css";
 import Table from 'react-bootstrap/Table'
 import Header from "../Header.jsx"
 import Footer from "../Footer.jsx"
+import API from "../../api/Api.jsx";
 
 export default class Database extends React.Component{
     constructor(props) {
         super(props);
+        this.state = {      
+            mentors: null,    
+        };
+    }
+
+    componentDidMount() {
+        API.getTable("password")
+        .then(res => {
+            this.setState({mentors: res.mentors});
+        })
     }
 
     render() {
+        let mentors = this.state.mentors;
+        let tableContents;
+        if(mentors == null) {
+            tableContents = (<tr><td>no data</td></tr>);
+        }
+        else {
+            tableContents = [];
+            for(const mentor of mentors) {
+                tableContents.push((
+                <tr>
+                <td>{mentor.first_name} {mentor.last_name}</td>
+                <td>{mentor.major}</td>
+                <td>{mentor.grad_year}</td>
+                <td>California University of Pennsylvania</td>
+                <td>California</td>
+                <td>United States of America</td>
+                <td>{mentor.email} 
+                    {mentor.linkedin == null? null: <br></br>}{mentor.linkedin}</td>
+                </tr>));
+            }
+        }  
+
         return (
             <div>
                 <Header/>
@@ -25,24 +58,7 @@ export default class Database extends React.Component{
                             <th>Country</th>
                             <th>Contact</th>
                         </tr>
-                        <tr>
-                            <td>John Appleseed</td>
-                            <td>Bio Chemistry</td>
-                            <td>2020</td>
-                            <td>California University of Pennsylvania</td>
-                            <td>California</td>
-                            <td>United States of America</td>
-                            <td>example@example.com</td>
-                        </tr>
-                        <tr>
-                            <td>John Appleseed</td>
-                            <td>Bio Chemistry</td>
-                            <td>2020</td>
-                            <td>California University of Pennsylvania</td>
-                            <td>California</td>
-                            <td>United States of America</td>
-                            <td>example@example.com</td>
-                        </tr>
+                        {tableContents}      
                     </thead>
                 </Table>
                 </div>

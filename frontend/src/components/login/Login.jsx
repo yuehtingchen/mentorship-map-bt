@@ -2,7 +2,7 @@ import React from 'react';
 import "./Login.css"
 import logo from './logo.png';
 import GoogleLogin from 'react-google-login';
-import axios from 'axios';
+import API from '../../api/Api.jsx';
 
 export default class Login extends React.Component{
     
@@ -22,19 +22,7 @@ export default class Login extends React.Component{
     }
 
     validateTokenAndObtainSession({data, idToken}) {
-        const headers = {
-            Authorization: idToken,
-            'Content-Type': 'application/json'
-        };
-        
-        // Need to change the hardcoded url
-        axios.post('http://127.0.0.1:8000/user/login/', data, { headers })
-            .then((response) => {
-                console.log(response);
-            })
-            .catch(() => {
-                console.log("login error");
-            });
+        API.login(idToken, data);
     }
     render() {
         return (

@@ -1,78 +1,64 @@
-const processResponse = (res) => {
-  if (isInvalidToken(res)) {
-    return { data: {} };
-  }
+import axios from 'axios';
 
-  if (res.status === NO_CONTENT) {
-    const response = Object.assign({}, res, { data: {} });
-    return response;
-  }
-  return res;
-};
-
+const URI_DOMAIN = "http://127.0.0.1:8000";
 const handleResponse = (options, response, jsonResponse) => {
-  const jsonRes = _.isEmpty(jsonResponse) ? {} : jsonResponse;
-  const { status } = response;
-  const { errors } = Object.assign({}, jsonRes);
-  const resp = {
-    status,
-    body: jsonResponse,
-    errors,
-    headers: response.headers,
-  };
+  console.log(response.data);
+  return jsonResponse;
 };
 
-const API = {
+const handleError = (options, error) => {
+  console.log("Error occured: " + error);
+  return null;
+};
+
+export const API =  {
   getHeaders(accessToken) {
     return {
-      Accept: accept,
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`,
     };
   },
 
-  makeRequest(path, reqInit, option = {}) {
-    const headers = this.getHeaders(accessToken);
-    const option = option
+  getLoginHeaders(idToken) {
+    return {
+      Authorization: idToken,
+      'Content-Type': 'application/json'
+    };
+  },
+
+  makeRequest(path, token, reqInit, option = {}) {
+    const headers = option.login ? this.getLoginHeaders(token) : this.getHeaders(token);
     const init = Object.assign({}, reqInit, { headers });
-    axios({
+    const url = URI_DOMAIN + path;
+
+    return axios({
       url,
       ...init,
     })
-      .then(res => {
-        handleResponse(option, res, res.data);
-      })
-      .catch((err) => {
-        handleError(option, res, res.data)
-      });
+    .then(res => {
+      handleResponse(option, res, res.data);
+      return res.data;
+    })
+    .catch(err => {
+      handleError(option, err);
+      return null;
+    })
   },
 
-  makeGetRequest(path, queryParams, options = {}) {
+  async makeGetRequest(path, token, options = {}) {
     const getData = {
       method: 'GET',
-      params: this.getParams(queryParams),
-      paramsSerializer: (params) => {
-        return qs.stringify(sanitizeParams(params), { arrayFormat: 'brackets' });
-      },
     };
-    this.makeRequest(path, getData, options);
+    const response = await this.makeRequest(path, token, getData, options);
+    return response;
   },
 
-  makePostRequest(path, body, options = {}) {
+  async makePostRequest(path, token, body, options = {}) {
     const postData = {
       method: 'POST',
       data: body,
-      params: this.getParams(),
-      paramsSerializer: (params) => {
-        return qs.stringify(sanitizeParams(params), { arrayFormat: 'brackets' });
-      },
     };
-    this.makeRequest(path, postData, options);
+    const response = await this.makeRequest(path, token, postData, options);
+    return response;
   },
-
-  makeLoginRequest(path, body, options = {}) {
-    
-  },
-  
-  config,
 };
