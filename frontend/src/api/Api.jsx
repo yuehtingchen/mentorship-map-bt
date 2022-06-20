@@ -10,7 +10,19 @@ const getTable = async(accessToken, options={"login": false}) => {
   return await API.makeGetRequest(path, accessToken, options);
 }
 
+const getSchools = async(accessToken, options={"login": false}) => {
+  const path = '/schools/';
+  return await API.makeGetRequest(path, accessToken, options);
+}
+
+const getSchoolsId = async(accessToken, id, options={"login": false}) => {
+  const path = `/schools/${id}/`;
+  return await API.makeGetRequest(path, accessToken, options);
+}
+
 export default {
     login,
-    getTable
+    getTable,
+    getSchools,
+    getSchoolsId
 };
