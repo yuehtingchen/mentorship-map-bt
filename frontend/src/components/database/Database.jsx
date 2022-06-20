@@ -16,7 +16,7 @@ export default class Database extends React.Component{
     componentDidMount() {
         API.getTable("password")
         .then(res => {
-            this.setState({mentors: res.mentors});
+            this.setState({mentors: res == null? null: res.mentors});
         })
     }
 
