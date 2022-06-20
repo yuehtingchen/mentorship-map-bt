@@ -6,7 +6,7 @@ import Footer from "../Footer.jsx"
 
 const containerStyle = {
     width: "100%",
-    height: "90vh"
+    height: "83vh"
 };
     
 const center = {
@@ -15,10 +15,6 @@ const center = {
 };
 
 export default class Map extends React.Component{
-    constructor(props) {
-        super(props);
-    }
-
 
     render() {
         return (
@@ -34,7 +30,7 @@ export default class Map extends React.Component{
                     >
                         { /* Child components, such as markers, info windows, etc. */ }
                         <></>
-                </GoogleMap>
+                    </GoogleMap>
                 </LoadScript>
                 <Footer/>
             </div>

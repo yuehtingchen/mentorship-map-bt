@@ -30,7 +30,7 @@ export default class Database extends React.Component{
             tableContents = [];
             for(const mentor of mentors) {
                 tableContents.push((
-                <tr>
+                <tr key={mentor.email}>
                 <td>{mentor.first_name} {mentor.last_name}</td>
                 <td>{mentor.major}</td>
                 <td>{mentor.grad_year}</td>
