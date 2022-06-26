@@ -34,7 +34,7 @@ export default class MyMarker extends React.Component {
                     city: res.city,
                     country: res.country,
                     mentors: res.mentors,
-                    essay_editing: null,
+                    essay_editing: res.essay_editing,
                 });
             });
         }
