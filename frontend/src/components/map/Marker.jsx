@@ -2,6 +2,7 @@ import React from "react"
 import API from "../../api/Api.jsx";
 import "./Marker.css";
 import { Marker, InfoWindow } from '@react-google-maps/api';
+import flag from "../../img/flag.png";
 
 export default class MyMarker extends React.Component {
     constructor(props) {
@@ -55,6 +56,7 @@ export default class MyMarker extends React.Component {
             <Marker
                 position={{lat: this.props.lat, lng: this.props.long}}
                 onClick={this.onToggleOpen}
+                icon={flag}
                 >
                 {this.props.isOpen && <InfoWindow
                     onCloseClick={this.onToggleOpen}
