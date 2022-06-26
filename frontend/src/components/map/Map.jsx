@@ -32,15 +32,17 @@ export default class Map extends React.Component{
         .then(res => {
             const schools = res;
             let markers = []
-            for(const school of schools) {
-                markers.push({
-                    id: school.id,
-                    lat: school.lat,
-                    long: school.long,
-                    isOpen: false,
-                });
+            if(res != null) {
+                for(const school of schools) {
+                    markers.push({
+                        id: school.id,
+                        lat: school.lat,
+                        long: school.long,
+                        isOpen: false,
+                    });
+                }
+                this.setState({markers: markers});
             }
-            this.setState({markers: markers});
         });
     }
 
