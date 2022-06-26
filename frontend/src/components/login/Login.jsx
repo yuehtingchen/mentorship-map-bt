@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Login.css"
-import logo from './logo.png';
+import logo from '../../img/logo.png';
 import GoogleLogin from 'react-google-login';
 import API from '../../api/Api.jsx';
 
