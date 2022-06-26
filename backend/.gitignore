@@ -33,6 +33,3 @@ venv/
 Lib/
 Scripts/
 *.cfg
-
-manage.py
-
