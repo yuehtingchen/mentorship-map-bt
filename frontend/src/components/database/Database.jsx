@@ -18,17 +18,6 @@ export default class Database extends React.Component{
         .then(res => {
             this.setState({mentors: res == null? null: res.mentors});
         })
-
-        API.getSchools("password")
-        .then(res => {
-            console.log(res);
-            // this.setState({mentors: res == null? null: res.mentors});
-        })
-
-        API.getSchoolsId("password", 1)
-        .then(res => {
-            // this.setState({mentors: res == null? null: res.mentors});
-        })
     }
 
     render() {
