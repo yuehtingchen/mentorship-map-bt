@@ -39,6 +39,7 @@ export default class Database extends React.Component{
                 <td>United States of America</td>
                 <td>{mentor.email} 
                     {mentor.linkedin == null? null: <br></br>}{mentor.linkedin}</td>
+                <td>{mentor.essay_editing + ""}</td>
                 </tr>));
             }
         }  
@@ -57,6 +58,7 @@ export default class Database extends React.Component{
                             <th>City</th>
                             <th>Country</th>
                             <th>Contact</th>
+                            <th>Essay Editing</th>
                         </tr>
                         {tableContents}      
                     </thead>
