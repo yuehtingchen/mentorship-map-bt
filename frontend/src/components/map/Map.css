@@ -5,22 +5,3 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
-footer a{
-    font-family: 'Poppins', sans-serif;
-    font-style: normal;
-    float: left;
-    text-align: center;
-    padding: 3vh;
-    text-decoration: none;
-    font-size: 2vh;
-}
-
-img{
-    float: none;
-    position: absolute;
-    height: 8vh;
-    top: 90vh;
-    left: 50%;
-    transform: translate(-50%, 50%);
-}

@@ -25,6 +25,11 @@ coverage.xml
 .python-version 
 
 # Environments 
+.env
 .venv 
 venv/ 
 
+# Windows Environment
+Lib/
+Scripts/
+*.cfg

@@ -1,15 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './index.css';
-import Login from './components/login/Login.jsx';
 import Map from './components/map/Map.jsx';
-import Header from './components/map/Header.jsx'
+import Login from './components/login/Login.jsx';
+import Database from './components/database/Database.jsx';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Map />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/database" element={<Database />} />
+      </Routes>
+    </Router>
+  );
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Map />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

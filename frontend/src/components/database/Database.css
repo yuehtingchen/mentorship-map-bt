@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* a{
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-size: 2vh;
+} */
+
+
+
+.table {
+    padding: 20px;
+    padding-top: 30px;
+    font-size: 2.3vh;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+}
+
+Table th {
+    color: #FF9900;
+    border-bottom: solid #FF9900;
+    height: 6vh;
+}
+
+Table td {
+    color: black;
+    font-weight: 500;
+    height: 6vh;
+}
