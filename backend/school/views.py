@@ -10,7 +10,7 @@ from rest_framework import viewsets
 from .serializers import UniSerializer
 from mentor.serializers import SimpleMentorSerializer
 from .models import Uni
-from mentor.models import Mentors
+from mentor.models import Mentor
 from rest_framework.response import Response
 
 
@@ -24,7 +24,7 @@ class UniViewSet(viewsets.ModelViewSet):
             
         instance = get_object_or_404(qset, pk = pk)
 
-        rel_course = Mentors.objects.filter(uni = instance)
+        rel_course = Mentor.objects.filter(uni = instance)
         rel_serializer = SimpleMentorSerializer(rel_course, many = True)
 
         serializer = self.get_serializer(instance)

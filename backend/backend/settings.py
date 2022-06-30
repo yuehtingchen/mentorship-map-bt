@@ -43,9 +43,6 @@ CORS_ORIGIN_ALLOW_ALL = True
 # Application definition
 
 INSTALLED_APPS = [
-    'user',
-    'mentor',
-    'school',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,6 +52,9 @@ INSTALLED_APPS = [
     'oauth2_provider',
     'corsheaders',
     'rest_framework',
+    'user',
+    'mentor',
+    'school',
     'google'
 ]
 
@@ -95,8 +95,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Mentorship',
+        'USER': "postgres",
+        'PASSWORD' : "andrew1207",
+        "HOST" : "localhost",
+        "PORT" : '5432'
     }
 }
 

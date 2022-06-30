@@ -1,9 +1,9 @@
 from django.db import models
 from django.db.models.fields import CharField, IntegerField, EmailField, URLField, TextField, BooleanField
-from school.models import High_school, Uni
+from school.models import HighSchool, Uni
 # Create your models here.
 
-class Mentors(models.Model):
+class Mentor(models.Model):
     first_name = CharField(max_length=100)
     last_name = CharField(max_length=100)
     major = CharField(max_length=100)
@@ -11,9 +11,8 @@ class Mentors(models.Model):
     email = EmailField(unique=True)
     linkedin = URLField(unique=True)
 
-    high_school = models.ForeignKey(High_school , null = True, on_delete = models.SET_NULL)
-    uni = models.ForeignKey(Uni , blank = True, null = True, on_delete = models.SET_NULL)
-    intro = TextField(blank = True, null = True)
+    uni = models.ForeignKey(Uni , blank = False, null = True, on_delete = models.SET_NULL)
+    intro = TextField(blank = False, null = True)
 
     YEAR_CHOICES = [("FR","高一"),("S0","高二"),("SR","高三")]
     preferred_mentee_grade = CharField(max_length = 100, null = True, blank = True,choices=YEAR_CHOICES)

@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from .models import High_school, Uni
+from .models import HighSchool, Uni
 
 class HighSchoolSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = High_school
+        model = HighSchool
         fields = ('id','name','lat','long','city','country')
 
 class UniSerializer(serializers.HyperlinkedModelSerializer):
