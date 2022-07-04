@@ -9,9 +9,9 @@ class Mentor(models.Model):
     major = CharField(max_length=100)
     grad_year = IntegerField()
     email = EmailField(unique=True)
-    linkedin = URLField(unique=True)
+    linkedin = URLField(unique=True, blank=True)
 
-    uni = models.ForeignKey(Uni , blank = False, null = True, on_delete = models.SET_NULL)
+    uni = models.ForeignKey(Uni , blank = False, null = False, on_delete = models.PROTECT)
     intro = TextField(blank = False, null = True)
 
     YEAR_CHOICES = [("FR","高一"),("S0","高二"),("SR","高三")]

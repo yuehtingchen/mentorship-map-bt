@@ -5,7 +5,7 @@ from school.serializers import HighSchoolSerializer, UniSerializer
 
 class SimpleMentorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Mentors
+        model = Mentor
         fields = ('id','first_name', 'last_name', 'major','grad_year','email', 'linkedin','intro', 'essay_editing')
 
 class MentorSerializer(serializers.HyperlinkedModelSerializer):
@@ -14,9 +14,9 @@ class MentorSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Mentor
-        fields = ('id','first_name', 'last_name', 'major','grad_year','email', 'linkedin','high_school', 'uni','intro','preferred_mentee_grade','other_preferences',"essay_editing")
+        fields = ('id','first_name', 'last_name', 'major','grad_year','email', 'linkedin', 'uni','intro','preferred_mentee_grade','other_preferences',"essay_editing")
 
 class TableSerializer(serializers.HyperlinkedModelSerializer):
     class Meta: 
         model = Mentor
-        fields = ('first_name', 'last_name', 'major','grad_year','email', 'linkedin')
+        fields = ('first_name', 'last_name', 'major','uni','grad_year','email', 'linkedin',"essay_editing")

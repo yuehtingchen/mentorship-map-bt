@@ -11,7 +11,7 @@ from .serializers import UsersSerializer
 from .models import User
 
 class UsersViewSet(viewsets.ModelViewSet):
-    queryset = Users.objects.all().order_by('id')
+    queryset = User.objects.all().order_by('id')
     serializer_class = UsersSerializer
 
 class UserLoginAPI(APIView):
