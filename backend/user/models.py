@@ -6,7 +6,7 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 
 # Create your models here.
-class Users(AbstractBaseUser):
+class User(AbstractBaseUser):
     first_name = CharField(max_length=100)
     last_name = CharField(max_length=100)
     email = EmailField(max_length=100, unique=True)
